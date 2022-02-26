@@ -35,10 +35,17 @@ public class MyClass<T extends Number> implements MyInterface<T> {
 		return Collections.min(c);
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
-	public T sum(int index1, int index2) {
-		return null;
+	public T sum(int t1, int t2) {
+		Class<? extends Number> cls = arr.get(t1).getClass();
+	    if (cls == Integer.class) {
+	        return (T) Integer.valueOf(arr.get(t1).intValue() + arr.get(t2).intValue());
+	    }
+	    if (cls == Double.class) {
+	    	return (T) Double.valueOf(arr.get(t1).doubleValue() + arr.get(t2).doubleValue());
+	    }
+	    throw new UnsupportedOperationException("Not supported class: " + cls);
 	}
-	
 	
 }
