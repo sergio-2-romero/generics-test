@@ -48,4 +48,26 @@ public class MyClass<T extends Number> implements MyInterface<T> {
 	    throw new UnsupportedOperationException("Not supported class: " + cls);
 	}
 	
+	@SuppressWarnings("unchecked")
+	public T factorialAlgorithm(T n) {
+	Class<? extends Number> cls = n.getClass();
+		if (cls == Integer.class) {
+			if (n.intValue() <= 1) {
+			     return (T) Integer.valueOf(1);
+			  } else {
+			     return (T) Long.valueOf(n.intValue() * (factorialAlgorithm((T) Integer.valueOf(n.intValue() - 1))).longValue());
+			  }
+		}
+		return null;
+	}
+	
+	public T factorial(int index1) {
+		return factorialAlgorithm(arr.get(index1));
+	}
+
+	
+	//public T prime(int index1) {
+		//return T;
+	//}
+	
 }

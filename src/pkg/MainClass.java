@@ -6,9 +6,9 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> arrList1 = new ArrayList<Integer>();
-		arrList1.add(23);
-		arrList1.add(43);
-		arrList1.add(66);
+		arrList1.add(13);
+		arrList1.add(6);
+		arrList1.add(5);
 		
 		ArrayList<Double> arrList2 = new ArrayList<Double>();
 		arrList2.add(4.3);
@@ -19,7 +19,8 @@ public class MainClass {
 		System.out.println("Product: " + obj1.product(1, 2));
 		System.out.println("Sum: " + obj1.sum(1, 2));
 		System.out.println("Max Value: " + obj1.maxValue(arrList1));
-		System.out.println("Min Value: " +obj1.minValue(arrList1));
+		System.out.println("Min Value: " + obj1.minValue(arrList1));
+		System.out.println("Factorial: " + obj1.factorial(0));
 		
 		System.out.println("");
 		
@@ -27,7 +28,7 @@ public class MainClass {
 		System.out.println("Product: " + obj2.product(0, 2));
 		System.out.println("Sum: " + obj2.sum(0, 2));
 		System.out.println("Max Value: " + obj2.maxValue(arrList2));
-		System.out.println("Min Value: " +obj2.minValue(arrList2));
+		System.out.println("Min Value: " + obj2.minValue(arrList2));
 	}
 
 }
