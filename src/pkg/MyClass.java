@@ -64,10 +64,28 @@ public class MyClass<T extends Number> implements MyInterface<T> {
 	public T factorial(int index1) {
 		return factorialAlgorithm(arr.get(index1));
 	}
-
 	
-	//public T prime(int index1) {
-		//return T;
-	//}
+	public boolean primeAlgorithm(T n, int i) {
+		 if (n.intValue() <= 2) {
+			 return (n.intValue() == 2) ? true : false;
+		 }
+		 if (n.intValue() % i == 0) {
+			 return false;
+		 }
+		 if (i * i > n.intValue()) {
+			 return true;
+		 }
+		 return primeAlgorithm(n, i + 1);
+	 }
+	 
+	 public ArrayList<T> prime() {
+		 ArrayList<T> primeNums = new ArrayList<>();
+		 for (T n : arr) {
+			 if (primeAlgorithm(n, 2)) {
+				 primeNums.add(n);
+			 }
+		 }
+		 return primeNums;
+	 }
 	
 }
